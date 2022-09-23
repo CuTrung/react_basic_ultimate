@@ -1,24 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { increaseCounter, decreaseCounter } from './redux/action/counterAction';
-const App = () => {
-  const count = useSelector(state => state.counter.count);
-  const dispatch = useDispatch();
+import './App.scss';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from './components/Header/Header';
 
+
+const App = () => {
   return (
-    <div>Hello</div>
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Hello world
-    //     </p>
-    //     <div>Count = {count}</div>
-    //     <button onClick={() => dispatch(increaseCounter())}>Increase</button>
-    //     <button onClick={() => dispatch(decreaseCounter())}>Decrease</button>
-    //   </header>
-    // </div>
+    <div className="app-container">
+      <Header />
+    </div>
   );
 }
 
