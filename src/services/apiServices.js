@@ -27,4 +27,6 @@ const putUpdateUser = (id, username, role, image) => {
     return axios.put('api/v1/participant', data);
 }
 
+
+
 export { postCreateNewUser, getAllUsers, putUpdateUser };
