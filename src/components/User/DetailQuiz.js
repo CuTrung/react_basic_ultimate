@@ -76,6 +76,35 @@ const DetailQuiz = (props) => {
 
     }
 
+    const handleFinishQuiz = () => {
+        let payload = {
+            quizId: +quizId,
+            answers: []
+        }
+        let answers = [];
+        if (dataQuiz && dataQuiz.length > 0) {
+            dataQuiz.forEach((question) => {
+                let questionId = question.questionId;
+                let userAnswerId = [];
+
+                // todo
+                question.answers.forEach((a) => {
+                    if (a.isSelected) {
+                        userAnswerId.push(a.id);
+                    }
+                })
+
+                answers.push({
+                    questionId: +questionId,
+                    userAnswerId: userAnswerId
+                })
+            })
+
+            payload.answers = answers;
+
+        }
+    }
+
 
     return (
         <div className="detail-quiz-container">
@@ -107,7 +136,7 @@ const DetailQuiz = (props) => {
                     >Next</button>
 
                     <button className='btn btn-warning'
-                        onClick={() => handleNext()}
+                        onClick={() => handleFinishQuiz()}
                     >Finish</button>
                 </div>
 
