@@ -167,9 +167,7 @@ const Questions = (props) => {
 
 
 
-
-        // postCreateNewQuestionForQuiz,
-        // postCreateNewAnswerForQuiz
+        // submit questions
         await Promise.all(questions.map(async (question) => {
             const q = await postCreateNewQuestionForQuiz(
                 +selectedQuiz.value,
@@ -182,8 +180,6 @@ const Questions = (props) => {
             }))
         }));
 
-
-        // submit questions
 
         // submit answers
     }
