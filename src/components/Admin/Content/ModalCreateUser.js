@@ -6,8 +6,6 @@ import { toast } from 'react-toastify';
 import { postCreateNewUser } from '../../../services/apiService';
 
 
-
-
 const ModalCreateUser = (props) => {
     const { show, setShow } = props;
     const handleClose = () => {
