@@ -246,10 +246,10 @@ const QuizQA = (props) => {
             questions: questionsClone
         });
 
-
-
-        // toast.success('Create questions and answer succeed!');
-        // setQuestions(initQuestions);
+        if (res && res.EC === 0) {
+            toast.success(res.EM);
+            fetchQuizWithQA();
+        }
     }
 
     const toBase64 = file => new Promise((resolve, reject) => {
