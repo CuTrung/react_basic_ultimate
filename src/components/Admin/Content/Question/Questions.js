@@ -33,7 +33,6 @@ const Questions = (props) => {
             ]
         },
     ];
-
     const [questions, setQuestions] = useState(initQuestions);
 
     const [isPreviewImage, setIsPreviewImage] = useState(false);
